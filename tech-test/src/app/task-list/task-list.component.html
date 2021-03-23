@@ -1,0 +1,11 @@
+<section class="task__list" *ngIf="tasks.length > 0">
+  <ul class="task__list__items">
+    <li class="task__list__item" *ngFor="let task of tasks" [class.completed]="task.done">
+      <app-task-list-item
+        [task]="task"
+        (save)="onSaveTask(task)"
+        (toggleComplete)="onToggleTaskComplete($event)"
+        (remove)="onRemoveTask($event)"></app-task-list-item>
+    </li>
+  </ul>
+</section>

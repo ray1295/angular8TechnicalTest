@@ -1,0 +1,64 @@
+/*
+
+Reset
+
+Reset definitions to be used across applications.
+
+*/
+
+/* ------------- Styles */
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+textarea,
+select,
+button,
+div,
+img,
+li,
+h3,
+a {
+    outline: none;
+}
+
+nav {
+  box-shadow: none !important;
+  border-bottom: 1px solid #edf1f7;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+/* ------------- Media */
+
+// Mobile
+@media only screen and (min-width: 320px) {}
+
+// Tablet
+@media only screen and (min-width: 768px) {}
+
+// Desktop
+@media only screen and (min-width: 1024px) {}
+
+// Desktop
+@media only screen and (min-width: 1280px) {}

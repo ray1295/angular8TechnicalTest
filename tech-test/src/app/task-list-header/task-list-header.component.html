@@ -1,0 +1,7 @@
+<header class="header flex pd-10 flex-flow-column space-around height-200px">
+  <h1 class="task__title">Tasks</h1>
+    <input class="bdr-10 bdr-none bg-gray pd-10" placeholder="Title" autofocus="" [(ngModel)]="newTask.label">
+    <textarea class="bdr-10 bdr-none bg-gray pd-10" placeholder="Description" autofocus=""
+      [(ngModel)]="newTask.description"></textarea>
+  <button class="font-12 font-white fw-800 pd-10 bdr-10 bg-green pointer height-40px" [disabled]="!newTask.label" (click)="addTask()">Save</button>
+</header>

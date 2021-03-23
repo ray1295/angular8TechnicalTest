@@ -1,25 +1,18 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "label": "Taxes",
-      "description": "Start doing my taxes and contact my accountant jhon for advice",
-      "category": "bureaucracy",
-      "done": true
-    },
-    {
-      "label": "rgergerg",
-      "description": "",
+      "label": "sag",
+      "description": "vawrgaw",
       "category": "",
       "done": false,
-      "id": 3
+      "id": 7
     },
     {
-      "label": "jhvjh",
-      "description": "",
+      "label": "asawsf",
+      "description": "world",
       "category": "",
       "done": false,
-      "id": 4
+      "id": 8
     }
   ]
 }

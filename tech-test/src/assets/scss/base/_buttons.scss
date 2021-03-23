@@ -1,0 +1,43 @@
+/*
+
+Buttons
+
+Buttons definitions to be used across applications.
+
+*/
+
+/* ------------- Variables */
+
+/* ------------- Styles */
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------- Mixins */
+
+/* ------------- Media */
+
+// Mobile
+@media only screen and (min-width: 320px) {}
+
+// Tablet
+@media only screen and (min-width: 768px) {}
+
+// Desktop
+@media only screen and (min-width: 1024px) {}
+
+// Desktop
+@media only screen and (min-width: 1280px) {}

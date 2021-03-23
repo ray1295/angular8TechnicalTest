@@ -1,0 +1,35 @@
+/*
+
+Colors
+
+Color definitions to be used across applications.
+
+*/
+
+/* ------------- Variables */
+
+$color-destructive: #ff3131;
+$color-bright: #ff9c00;
+$color-go: #1dca7f;
+$color-info: #4f87ec;
+$color-white: #ffffff;
+$color-light-gray: #f1f3f4;
+$color-text-gray: #a3a3a3;
+$color-gray: #888888;
+$color-dark: #000;
+$color-darking: #262626;
+$color-google: #4285f4;
+
+/* ------------- Media */
+
+// Mobile
+@media only screen and (min-width: 320px) {}
+
+// Tablet
+@media only screen and (min-width: 768px) {}
+
+// Desktop
+@media only screen and (min-width: 1024px) {}
+
+// Desktop
+@media only screen and (min-width: 1280px) {}

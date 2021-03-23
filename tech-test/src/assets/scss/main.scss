@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Base
+@import "base/themes";
+@import "base/typography";
+@import "base/colors";
+@import "base/reset";
+@import "base/buttons";
+@import "base/utility";
+@import "base/icon";
+
+// Pages
+@import "features/task";
+
+// Layouts
+@import "layout/forms";
+@import "layout/layout";
+
+// Components

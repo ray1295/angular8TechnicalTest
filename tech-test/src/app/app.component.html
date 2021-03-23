@@ -1,13 +1,7 @@
-<h1 class="title-text">welcome to angular 8 Origin technical test: {{title}}</h1>
+<section class="task bdr-10">
+  <app-task-list-header (add)="onAddTask($event)"></app-task-list-header>
 
-<section class="todoapp">
-  <!-- header that lets us create new todo -->
-  <app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
-
-  <!-- section is now replaced with app-todo-list -->
-  <app-todo-list [todos]="todos" (toggleComplete)="onToggleTodoComplete($event)" (remove)="onRemoveTodo($event)">
-  </app-todo-list>
-
-  <!-- footer that displays statistics -->
-  <app-todo-list-footer [todos]="todos"></app-todo-list-footer>
+  <app-task-list [tasks]="tasks" (toggleComplete)="onToggleTaskComplete($event)" (remove)="onRemoveTask($event)"
+    (save)="onSaveTask($event)">
+  </app-task-list>
 </section>

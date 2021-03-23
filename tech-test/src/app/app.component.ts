@@ -1,67 +1,44 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from 'rxjs';
-import { Todo } from "./todo";
-import { TodoDataService } from "./todo-data.service";
+import { Task } from "./core/models/task";
+import { TaskDataService } from "./core/services/task/task-data.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
-  providers: [],
 })
-export class AppComponent implements OnInit{
-  title = "tech-test";
-  todos: Todo[] = [];
+export class AppComponent implements OnInit {
+  tasks: Task[] = [];
 
-  constructor(private todoDataService: TodoDataService) {}
+  constructor(private taskDataService: TaskDataService) {}
 
-  public ngOnInit() {
-    this.todoDataService
-      .getAllTodos()
-      .subscribe(
-        (todos) => {
-          this.todos = todos;
-        }
-      );
+  public ngOnInit(): void {
+    this.taskDataService.getAllTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
   }
 
-    // Add new method to handle event emitted by TodoListHeaderComponent
-  onAddTodo(todo: Todo): void {
-    // this.todoDataService.addTodo(todo);
-    this.todoDataService
-    .addTodo(todo)
-    .subscribe(
-      (newTodo) => {
-        this.todos = this.todos.concat(newTodo);
-      }
-    );
+  onAddTask(task: Task): void {
+    this.taskDataService.addTask(task).subscribe((newTask) => {
+      this.tasks = this.tasks.concat(newTask);
+    });
   }
 
-  // rename from toggleTodoComplete
-  onToggleTodoComplete(todo: Todo): void {
-    // this.todoDataService.toggleTodoComplete(todo);
-    this.todoDataService
-    .toggleTodoComplete(todo)
-    .subscribe(
-      (updatedTodo) => {
-        todo = updatedTodo;
-      }
-    );
+  onSaveTask(task: Task): void {
+    this.taskDataService.updateTaskById(task).subscribe((updatedTask) => {
+      task = updatedTask;
+    });
   }
 
-  // rename from removeTodo
-  onRemoveTodo(todo: Todo): void {
-    // this.todoDataService.deleteTodoById(todo.id);
-    this.todoDataService
-    .deleteTodoById(todo.id)
-    .subscribe(
-      (_) => {
-        this.todos = this.todos.filter((t) => t.id !== todo.id);
-      }
-    );
+  onToggleTaskComplete(task: Task): void {
+    this.taskDataService.toggleTaskComplete(task).subscribe((updatedTask) => {
+      task = updatedTask;
+    });
   }
 
-  // get todos(): Observable<Todo[]> {
-  //   return this.todoDataService.getAllTodos();
-  // }
+  onRemoveTask(task: Task): void {
+    this.taskDataService.deleteTaskById(task.id).subscribe((_) => {
+      this.tasks = this.tasks.filter((t) => t.id !== task.id);
+    });
+  }
 }

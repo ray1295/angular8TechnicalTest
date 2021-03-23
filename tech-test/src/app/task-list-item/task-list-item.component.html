@@ -1,0 +1,18 @@
+<div class="task__view flex pd-10">
+  <div class="flex-2 flex" *ngIf="!edit">
+    <input class="task__view__toggle" type="checkbox" (click)="toggleTaskComplete(task)" [checked]="task.done">
+    <span class="mg-r-10 fw-500">{{task.label}}</span>
+    <span>{{task.description}}</span>
+  </div>
+  <div class="flex-2 flex" *ngIf="edit">
+    <input class="bdr-10 bdr-none bg-gray pd-10 mg-r-10" placeholder="Title" [(ngModel)]="task.label">
+    <textarea class="bdr-10 bdr-none bg-gray pd-10" placeholder="Description" [(ngModel)]="task.description"></textarea>
+  </div>
+  <div class="flex-1 text-align-right mg-auto">
+    <button class="font-12 font-white fw-800 pd-10 bdr-10 bg-green pointer mg-r-10" (click)="saveTask(task)"
+      *ngIf="edit" value="Save">Save </button>
+    <button class="font-12 font-white fw-800 pd-10 bdr-10 bg-blue pointer mg-r-10" (click)="onEdit()"
+      *ngIf="!edit">Edit</button>
+    <button class="font-12 font-white fw-800 pd-10 bdr-10 bg-alert pointer" (click)="removeTask(task)">Delete</button>
+  </div>
+</div>
